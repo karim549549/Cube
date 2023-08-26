@@ -1,0 +1,114 @@
+.box {
+    height: 50px;
+    width: 50px;
+    transform-style: preserve-3d;
+    transform: rotate3d(42, -35, 0, -15deg);
+    transition: 0.3s;
+}
+.box button{
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
+    font-weight: inherit;
+    color: inherit;
+}
+.box button:focus{
+    border: 0px;
+    outline: 0px;
+}
+.card {
+    height: 50px; 
+    width: 50px; 
+    text-align: center;
+    padding: 20px 0px; 
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    box-sizing: border-box;
+    position: absolute;
+    font-weight: 100;
+    font-size: 35px;
+    transition: 0.3s;
+    border-radius: 0px;
+}
+.card:hover{
+    transform: scale(1.2);
+}
+#front {
+    transform: translateZ(25px); 
+}
+
+#back {
+    transform: translateZ(-25px); 
+}
+
+#left {
+    right: -25px; 
+    transform: rotateY(-90deg);
+}
+
+#right {
+    left: 25px; 
+    transform: rotateY(90deg);
+}
+
+#top {
+    bottom: 25px; 
+    transform: rotateX(90deg); 
+}
+
+#bottom {
+    top: 25px; 
+    transform: rotateX(-90deg); 
+}
+@keyframes cardrotate{
+    0%{
+        transform: rotate3d(-12, 12, 6, 25deg);
+    }
+    10%{
+        transform: rotate3d(-12, 12, 6, 45deg);
+    }
+    20%{
+        transform: rotate3d(12, -12, 6, 25deg);
+    }
+    30%{
+        transform: rotate3d(12, -12, 6, 45deg);
+    }
+    40%{
+        transform: rotate3d(-12, 12, 0, 25deg);
+    }
+    50%{
+        transform: rotate3d(-12, 12, -6, 45deg);
+    }
+    60%{
+        transform: rotate3d(12, 12, -12, 25deg);
+    }
+
+    70%{
+        transform: rotate3d(-6, -12, -6, 45deg);
+    }
+    80%{
+        transform: rotate3d(6, 12, -12, 25deg);
+    }
+    90%{
+        transform: rotate3d(6, 12, 0, 45deg);
+    }
+    100%{
+        transform: rotate3d(-12, 12, 6, 25deg);
+    }
+}
+
+.swap{
+    animation:  1000ms swap forwards ease;
+    background-color: #fdd114;
+}
+
+@keyframes swap {
+    0% {
+         transform: rotate3d(42, -35, 0, -15deg);
+    }
+    100% {
+      transform: rotate3d(42, -35, 0, -195deg);
+    }
+  }
